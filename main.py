@@ -10,7 +10,7 @@ from aiogram.types import InlineKeyboardButton, CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 
-bot = Bot(token="6998135939:AAGQw-daNhXFgQeQzlm5eaDhfiOz_TdHbMQ")
+bot = Bot(token="")
 dp = Dispatcher()
 
 
