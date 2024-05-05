@@ -77,7 +77,6 @@ async def call_bck(callback: CallbackQuery, state: FSMContext):
 
 async def main():
     logging.basicConfig(level=logging.INFO)
-    bot = Bot(token="6998135939:AAGQw-daNhXFgQeQzlm5eaDhfiOz_TdHbMQ")
     await dp.start_polling(bot)
 
 
