@@ -1,3 +1,5 @@
+import asyncio
+
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import async_sessionmaker
 from db.config import cfg
@@ -40,8 +42,10 @@ async def searchUser(user_link: str):
     
     try:
         async with session() as session:
-            user = select(Users).filter(Users.link == user_link).all()
-            print(user)
+            user = select(Users).filter(Users.link == user_link)
+            resp = await session.execute(user)
+            user = resp.scalar_one_or_none()
+            
+            return user.id
     finally:
         await cfg.engine.dispose()
-
